@@ -7,7 +7,7 @@ notifications:
   to: abramov.dmitry92@gmail.com
   subject: '{{projectName}}. Build status: {{status}}'
   message:
-	<div style="font-family:'Segoe UI',Arial,Sans-Serif;font-size:10pt;">
+	"<div style="font-family:'Segoe UI',Arial,Sans-Serif;font-size:10pt;">
 		{{#passed}}
 		<h1 style="font-size: 150%;font-weight:normal; color:#078DC7;"><a href="{{buildUrl}}" style="color:#078DC7;">Build {{projectName}} {{buildVersion}} completed</a></h1>{{/passed}}
 		{{#failed}}
@@ -17,7 +17,7 @@ notifications:
 		    <br />
 		    <span style="font-size: 110%;color:#222;">{{commitMessage}}</span>
 		</p>		
-	</div>
+	</div>"
   on_build_success: false
   on_build_failure: true
   on_build_status_changed: true
