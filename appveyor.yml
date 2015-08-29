@@ -2,6 +2,10 @@ configuration: Release
 
 version: 0.0.1.{build}
 
+test:
+  assemblies:
+  - UnitTests.dll
+
 notifications:
 - provider: Email
   to:
