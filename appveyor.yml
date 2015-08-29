@@ -6,6 +6,7 @@ notifications:
 - provider: Email
   to:
   - abramov.dmitry92@gmail.com
+  subject: 'SymbolizeIT. Build status: {{status}}'
   message: >-
     <div style="font-family:'Segoe UI',Arial,Sans-Serif;font-size:10pt;">
         {{#passed}}
