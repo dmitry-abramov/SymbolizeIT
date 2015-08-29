@@ -3,7 +3,7 @@ configuration: Release
 version: 0.0.1.{build}
 
 before_build:
-- nuget-restore SymbolizeIT.sln
+- nuget restore SymbolizeIT.sln
 
 test:
   assemblies:
