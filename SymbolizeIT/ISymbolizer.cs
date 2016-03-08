@@ -12,12 +12,12 @@ namespace SymbolizeIT
 
         IAsciiImage GetAsciiArt(Image image);
 
-        IAsciiImage GetAsciiArt(Image image, Size size);
+        IAsciiImage GetAsciiArt(Image image, Size pixelBlockSize);
 
         IAsciiImage GetAsciiArt(Image image, Font font);
 
         IAsciiImage GetAsciiArt(Image image, Font font, AsciiPalette palette);
 
-        IAsciiImage GetAsciiArt(Image image, Font font, AsciiPalette palette, Size size);
+        IAsciiImage GetAsciiArt(Image image, Font font, AsciiPalette palette, Size pixelBlockSize);
     }
 }

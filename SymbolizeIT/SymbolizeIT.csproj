@@ -35,13 +35,14 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Args.cs" />
     <Compile Include="AsciiImage.cs" />
     <Compile Include="AsciiPalette.cs" />
     <Compile Include="DefaultValues.cs" />
     <Compile Include="IAsciiImage.cs" />
     <Compile Include="ISymbolizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Symbolizer.cs" />
+    <Compile Include="ToneBasedSymbolizer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

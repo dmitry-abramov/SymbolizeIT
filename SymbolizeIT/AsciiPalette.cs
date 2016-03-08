@@ -38,5 +38,10 @@ namespace SymbolizeIT
             get;
             set;
         }
+
+        public char GetSymbolByBrightness(byte brightness)
+        {
+            throw new KeyNotFoundException();
+        }
     }
 }
