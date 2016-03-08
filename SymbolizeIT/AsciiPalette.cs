@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -41,7 +42,13 @@ namespace SymbolizeIT
 
         public char GetSymbolByBrightness(byte brightness)
         {
-            throw new KeyNotFoundException();
+            if (IsBrightnessSorted)
+            {
+                var rangeSize = byte.MaxValue / Count + 1;
+                return this[brightness / rangeSize];
+            }
+
+            throw new InvalidOperationException();
         }
     }
 }
