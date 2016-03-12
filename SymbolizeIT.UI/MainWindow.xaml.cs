@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,23 @@ namespace SymbolizeIT.UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CloseApplication(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void LoadImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select a image";
+            openFileDialog.Filter = "Image Files|*.jpg";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                OriginalImageImg.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
         }
     }
 }

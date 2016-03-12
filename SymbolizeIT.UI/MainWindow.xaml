@@ -1,8 +1,53 @@
 ﻿<Window x:Class="SymbolizeIT.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="SymbolizeIT" Height="768" Width="1024">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Load" Click="LoadImage"/>
+                <MenuItem Header="_Save ASCII image"/>
+                <Separator/>
+                <MenuItem Header="_Close" Click="CloseApplication"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Left Menu Panel-->
+            <StackPanel HorizontalAlignment="Left"
+                        Grid.Column="0">
+                
+                <Button Name="LoadImageBtn" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Content="Load Image" 
+                        Margin="5" 
+                        Padding="5"
+                        Click="LoadImage"/>
+                
+                <Button Name="ConvertToAsciiBtn" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Content="Convert to ASCII" 
+                        Margin="5" 
+                        Padding="5"/>
+            </StackPanel>
+
+            <!--Original Image-->
+            <Image Name="OriginalImageImg" 
+                   Grid.Column="1"
+                   Stretch="Fill"/>
+        </Grid>
     </Grid>
 </Window>
