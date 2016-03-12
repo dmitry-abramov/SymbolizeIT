@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolizeIT", "SymbolizeIT\SymbolizeIT.csproj", "{BAFEAC55-43EE-4385-BA79-373AFEFA992F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "SymbolizeIT.UnitTests\UnitTests.csproj", "{AC0C82B5-601B-4340-907A-6E2158824B5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolizeIT.UnitTests", "SymbolizeIT.UnitTests\SymbolizeIT.UnitTests.csproj", "{AC0C82B5-601B-4340-907A-6E2158824B5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{31CD3BC5-7F11-4C39-92C9-1855E418946A}"
 	ProjectSection(SolutionItems) = preProject

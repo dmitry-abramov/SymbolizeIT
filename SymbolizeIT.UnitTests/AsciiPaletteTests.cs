@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 using SymbolizeIT;
 
-namespace UnitTests
+namespace SymbolizeIT.UnitTests
 {
     [TestFixture]
     public class AsciiPaletteTests
