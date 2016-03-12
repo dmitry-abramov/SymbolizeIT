@@ -8,6 +8,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--Main menu-->
         <Menu>
             <MenuItem Header="_File">
                 <MenuItem Header="_Load" Click="LoadImage"/>
@@ -41,13 +42,18 @@
                         VerticalAlignment="Center" 
                         Content="Convert to ASCII" 
                         Margin="5" 
-                        Padding="5"/>
+                        Padding="5"
+                        Click="ConverToAscii"/>
             </StackPanel>
 
             <!--Original Image-->
             <Image Name="OriginalImageImg" 
                    Grid.Column="1"
                    Stretch="Fill"/>
+            
+            <!--ASCII image-->
+            <TextBlock Name="AsciiImageTxb"
+                       Grid.Column="2"/>
         </Grid>
     </Grid>
 </Window>

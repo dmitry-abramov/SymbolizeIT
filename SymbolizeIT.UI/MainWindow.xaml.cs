@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,15 @@ namespace SymbolizeIT.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ISymbolizer converter;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            converter = new ToneBasedSymbolizer();
+            converter.DefaultPalette = new AsciiPalette(new []{' ', '.', '+', ':', '&'}, true);
+            converter.DefaultBlockSize = new System.Drawing.Size(10, 10);
         }
 
         private void CloseApplication(object sender, RoutedEventArgs e)
@@ -41,6 +48,33 @@ namespace SymbolizeIT.UI
             {
                 OriginalImageImg.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
+        }
+
+        private void ConverToAscii(object sender, RoutedEventArgs e)
+        {
+            AsciiImageTxb.Text = string.Empty;
+
+            var imageSource = OriginalImageImg.Source as BitmapImage;
+
+            if (imageSource == null)
+            {
+                throw new Exception("Orifinal image is not BitmapImage");
+            }
+
+            var image = new Bitmap(imageSource.UriSource.LocalPath);
+
+            var asciiImage = converter.GetAsciiArt(image);
+
+            for (int i = 0; i < asciiImage.Width; i++)
+            {
+                for (int j = 0; j < asciiImage.Height; j++)
+                {
+                    AsciiImageTxb.Text += asciiImage[j, i];
+                }
+                AsciiImageTxb.Text += Environment.NewLine;                
+            }
+
+            AsciiImageTxb.FontSize = 8.0f;
         }
     }
 }

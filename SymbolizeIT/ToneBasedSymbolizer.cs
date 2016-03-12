@@ -100,7 +100,7 @@ namespace SymbolizeIT
 
                     var averageBrightness = (byte)(brightnessSum / ((currentBlockEndX - currentBlockStartX) * ((currentBlockEndY - currentBlockStartY))));
 
-                    asciiImage[i, j] = palette.GetSymbolByBrightness(averageBrightness);
+                    asciiImage[j, i] = palette.GetSymbolByBrightness(averageBrightness);
                 }
             }
 
